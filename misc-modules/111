@@ -1,0 +1,25 @@
+[0mtotal 104
+-rw-r--r-- 1 root root    0 Apr 25 14:54 [0m111[0m
+-rw-r--r-- 1 root root  397 Apr 25 14:50 [0mMakefile[0m
+-rwxr--r-- 1 root root  885 Apr 25 14:47 [01;32mMakefile1[0m
+-rw-r--r-- 1 root root    0 Apr 25 14:50 [0mModule.symvers[0m
+-rwxr--r-- 1 root root 2128 Apr 25 14:42 [01;32mcomplete.c[0m
+-rwxr--r-- 1 root root 1974 Apr 25 14:47 [01;32mfaulty.c[0m
+-rw-r--r-- 1 root root 7110 Apr 25 14:50 [0mfaulty.ko[0m
+-rw-r--r-- 1 root root  714 Apr 25 14:50 [0mfaulty.mod.c[0m
+-rw-r--r-- 1 root root 6124 Apr 25 14:50 [0mfaulty.mod.o[0m
+-rw-r--r-- 1 root root 1648 Apr 25 14:47 [0mfaulty.o[0m
+-rwxr--r-- 1 root root  463 Apr 25 14:42 [01;32mhello.c[0m
+-rw-r--r-- 1 root root 1100 Apr 25 14:43 [0mhello.o[0m
+-rwxr--r-- 1 root root 1130 Apr 25 14:42 [01;32mhellop.c[0m
+-rw-r--r-- 1 root root 1856 Apr 25 14:43 [0mhellop.o[0m
+-rwxr--r-- 1 root root 6194 Apr 25 14:42 [01;32mjiq.c[0m
+-rwxr--r-- 1 root root 7571 Apr 25 14:42 [01;32mjit.c[0m
+-rwxr--r-- 1 root root 2293 Apr 25 14:42 [01;32mkdataalign.c[0m
+-rwxr--r-- 1 root root 1489 Apr 25 14:42 [01;32mkdatasize.c[0m
+-rwxr--r-- 1 root root  578 Apr 25 14:53 [01;32mload[0m
+-rwxr--r-- 1 root root 2044 Apr 25 14:42 [01;32mseq.c[0m
+-rw-r--r-- 1 root root 2044 Apr 25 14:43 [0mseq.o[0m
+-rwxr--r-- 1 root root 6200 Apr 25 14:42 [01;32msilly.c[0m
+-rwxr--r-- 1 root root 2161 Apr 25 14:42 [01;32msleepy.c[0m
+[m

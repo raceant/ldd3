@@ -1,0 +1,222 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+A1Decode	codec.c	/^int A1Decode(const unsigned char *buff, int length, A1Msg_T* pMsg)$/;"	f
+A1Encode	codec.c	/^int A1Encode(unsigned char *buff, int *length, const A1Msg_T* pMsg)$/;"	f
+A1Msg_T	codec.h	/^}A1Msg_T;$/;"	t	typeref:union:__anon4
+A1Time_T	codec.h	/^}A1Time_T;$/;"	t	typeref:struct:A1Time_tag
+A1Time_tag	codec.h	/^typedef struct A1Time_tag$/;"	s
+A1_BUFF_SHORTAGE	codec.h	10;"	d
+A1_ERROR_CRC	codec.h	7;"	d
+A1_ERROR_OK	codec.h	5;"	d
+A1_ERROR_TYPE	codec.h	9;"	d
+A1_ERROR_UNKNOW	codec.h	6;"	d
+A1_ERROR_VERSION	codec.h	8;"	d
+ATUOFLASE	main.c	/^typedef enum {ATUOTRUE,ATUOFLASE}E_AtuoWork;$/;"	e	enum:__anon1	file:
+ATUOTRUE	main.c	/^typedef enum {ATUOTRUE,ATUOFLASE}E_AtuoWork;$/;"	e	enum:__anon1	file:
+BUFLEN	main.c	26;"	d	file:
+CARD_PRESENT_ACK	codec.h	17;"	d
+CARD_PRESENT_REQ	codec.h	16;"	d
+CARD_TMP_MASK	Ulist.h	7;"	d
+CARD_VAL_MASK	Ulist.h	6;"	d
+CARMAN_PORT	main.c	27;"	d	file:
+CROSS	Makefile	/^CROSS=arm-linux-$/;"	m
+CardInfo_T	codec.h	/^}CardInfo_T;$/;"	t	typeref:struct:CardInfo_tag
+CardInfo_tag	codec.h	/^typedef struct CardInfo_tag$/;"	s
+CardPresentAck_t	codec.h	/^}HeartBeatReq_T,HeartBeatAck_T,SetClockAck_T,CardPresentAck_t,GateOpenReq_T$/;"	t	typeref:struct:HeartBeatReq_tag
+CardPresentReq_T	codec.h	/^}CardPresentReq_T;$/;"	t	typeref:struct:CardPresentReq_tag
+CardPresentReq_tag	codec.h	/^typedef struct CardPresentReq_tag$/;"	s
+Display	display.c	/^void Display(const char* szText)$/;"	f
+E_AtuoWork	main.c	/^typedef enum {ATUOTRUE,ATUOFLASE}E_AtuoWork;$/;"	t	typeref:enum:__anon1	file:
+E_Report	main.c	/^typedef enum{REPORTTRUE,REPORTFLASE}E_Report;$/;"	t	typeref:enum:__anon2	file:
+FlushScreen	display.c	/^void FlushScreen(void)$/;"	f
+GATE_OPEN_ACK	codec.h	19;"	d
+GATE_OPEN_REQ	codec.h	18;"	d
+GateOpenAck_T	codec.h	/^ ,GateOpenAck_T,ListVerInq_T,ListVerAck_T,ListResetReq_T,ListResetAck_T$/;"	t	typeref:struct:HeartBeatReq_tag
+GateOpenReq_T	codec.h	/^}HeartBeatReq_T,HeartBeatAck_T,SetClockAck_T,CardPresentAck_t,GateOpenReq_T$/;"	t	typeref:struct:HeartBeatReq_tag
+GetDword	codec.c	/^static unsigned int GetDword(const unsigned char* pWork)$/;"	f	file:
+GetListVersion	ulist.c	/^unsigned int GetListVersion(void)$/;"	f
+GetSubscriber	ulist.c	/^Subscriber_T* GetSubscriber(unsigned int dwCardNo)$/;"	f
+GetTicks	misc.c	/^unsigned int GetTicks(void)$/;"	f
+HEART_BEAT_ACK	codec.h	13;"	d
+HEART_BEAT_REQ	codec.h	12;"	d
+HeartBeatAck_T	codec.h	/^}HeartBeatReq_T,HeartBeatAck_T,SetClockAck_T,CardPresentAck_t,GateOpenReq_T$/;"	t	typeref:struct:HeartBeatReq_tag
+HeartBeatReq_T	codec.h	/^}HeartBeatReq_T,HeartBeatAck_T,SetClockAck_T,CardPresentAck_t,GateOpenReq_T$/;"	t	typeref:struct:HeartBeatReq_tag
+HeartBeatReq_tag	codec.h	/^typedef struct HeartBeatReq_tag$/;"	s
+INIT_MSG	main.c	46;"	d	file:
+LED_SHOW_ACK	codec.h	33;"	d
+LED_SHOW_REQ	codec.h	32;"	d
+LINK_FAIL_TIMER	main.c	43;"	d	file:
+LIST_MODIFY_ACK	codec.h	27;"	d
+LIST_MODIFY_REQ	codec.h	26;"	d
+LIST_RESET_ACK	codec.h	25;"	d
+LIST_RESET_REQ	codec.h	24;"	d
+LIST_VERSION_ACK	codec.h	23;"	d
+LIST_VERSION_INQ	codec.h	20;"	d
+LIST_VERSION_REQ	codec.h	22;"	d
+LIST_VERSION_RSP	codec.h	21;"	d
+LORD_DOWN_OFF	lordweb.h	13;"	d
+LORD_DOWN_ON	lordweb.h	12;"	d
+LORD_END_WRITE	lordweb.h	5;"	d
+LORD_IO_WRITE	lordweb.h	7;"	d
+LORD_RS485_RX	lordweb.h	15;"	d
+LORD_RS485_TX	lordweb.h	14;"	d
+LORD_SEEK_SET	lordweb.h	4;"	d
+LORD_UP_OFF	lordweb.h	11;"	d
+LORD_UP_ON	lordweb.h	10;"	d
+LORD_VEHICLE_STAT	lordweb.h	8;"	d
+LORD_WRITE	lordweb.h	6;"	d
+LedShowAck_T	codec.h	/^ ,ListModifyAck_T,LedShowAck_T$/;"	t	typeref:struct:HeartBeatReq_tag
+LedShowReq_T	codec.h	/^}LedShowReq_T;$/;"	t	typeref:struct:LedShowReq_tag
+LedShowReq_tag	codec.h	/^typedef struct LedShowReq_tag$/;"	s
+ListModifyAck_T	codec.h	/^ ,ListModifyAck_T,LedShowAck_T$/;"	t	typeref:struct:HeartBeatReq_tag
+ListModifyReq_T	codec.h	/^}ListModifyReq_T;$/;"	t	typeref:struct:ListModifyReq_tag
+ListModifyReq_tag	codec.h	/^typedef struct ListModifyReq_tag$/;"	s
+ListResetAck_T	codec.h	/^ ,GateOpenAck_T,ListVerInq_T,ListVerAck_T,ListResetReq_T,ListResetAck_T$/;"	t	typeref:struct:HeartBeatReq_tag
+ListResetReq_T	codec.h	/^ ,GateOpenAck_T,ListVerInq_T,ListVerAck_T,ListResetReq_T,ListResetAck_T$/;"	t	typeref:struct:HeartBeatReq_tag
+ListVerAck_T	codec.h	/^ ,GateOpenAck_T,ListVerInq_T,ListVerAck_T,ListResetReq_T,ListResetAck_T$/;"	t	typeref:struct:HeartBeatReq_tag
+ListVerInq_T	codec.h	/^ ,GateOpenAck_T,ListVerInq_T,ListVerAck_T,ListResetReq_T,ListResetAck_T$/;"	t	typeref:struct:HeartBeatReq_tag
+ListVerInq_tag	codec.h	/^typedef struct ListVerInq_tag$/;"	s
+ListVerRsp_T	codec.h	/^}ListVerRsp_T,ListVersionReq_T;$/;"	t	typeref:struct:ListVerInq_tag
+ListVersionReq_T	codec.h	/^}ListVerRsp_T,ListVersionReq_T;$/;"	t	typeref:struct:ListVerInq_tag
+MAX_LIST_RECORD	codec.h	37;"	d
+MAX_OFF_RECORD	main.c	28;"	d	file:
+MAX_SHOW_LENGTH	codec.h	38;"	d
+MAX_SUBSCRIBER	Ulist.h	4;"	d
+ModifySubscriber	ulist.c	/^int ModifySubscriber(unsigned int dwCardNo, unsigned char ucValid, unsigned char ucTmp)$/;"	f
+OFFLINE_TRAN_ACK	codec.h	29;"	d
+OFFLINE_TRAN_REQ	codec.h	28;"	d
+OffLineTransAck_T	codec.h	/^}OffLineTransAck_T;$/;"	t	typeref:struct:OffLineTransAck_tag
+OffLineTransAck_tag	codec.h	/^typedef struct OffLineTransAck_tag$/;"	s
+OffLineTransReq_T	codec.h	/^}OffLineTransReq_T,VehiclePresentReq_T,VehiclePresentAck_T;$/;"	t	typeref:struct:OffLineTransReq_tag
+OffLineTransReq_tag	codec.h	/^typedef struct OffLineTransReq_tag$/;"	s
+OffRecord_T	main.c	/^}OffRecord_T;$/;"	t	typeref:struct:OffRecord_tag	file:
+OffRecord_tag	main.c	/^typedef struct OffRecord_tag$/;"	s	file:
+PutDword	codec.c	/^static void PutDword(unsigned char* pWork, unsigned int dwData)$/;"	f	file:
+REPORTFLASE	main.c	/^typedef enum{REPORTTRUE,REPORTFLASE}E_Report;$/;"	e	enum:__anon2	file:
+REPORTTRUE	main.c	/^typedef enum{REPORTTRUE,REPORTFLASE}E_Report;$/;"	e	enum:__anon2	file:
+RESET_ACK	codec.h	35;"	d
+RESET_REQ	codec.h	34;"	d
+ReadConfigureFile	main.c	/^static void ReadConfigureFile(void)$/;"	f	file:
+ReadListFromFile	ulist.c	/^int ReadListFromFile(void)$/;"	f
+RebuildList	ulist.c	/^void RebuildList(void)$/;"	f
+ResetAck_T	codec.h	/^ ,ResetReq_T,ResetAck_T;$/;"	t	typeref:struct:HeartBeatReq_tag
+ResetList	ulist.c	/^void ResetList(void)$/;"	f
+ResetReq_T	codec.h	/^ ,ResetReq_T,ResetAck_T;$/;"	t	typeref:struct:HeartBeatReq_tag
+SCREEN_BUFF_SIZE	display.c	22;"	d	file:
+SCREEN_X	display.c	19;"	d	file:
+SCREEN_Y	display.c	21;"	d	file:
+SET_CLOCK_ACK	codec.h	15;"	d
+SET_CLOCK_REQ	codec.h	14;"	d
+SHIFTTIME	display.c	25;"	d	file:
+SPACE	display.c	26;"	d	file:
+STARTPAUSETIME	display.c	23;"	d	file:
+STOPPAUSETIME	display.c	24;"	d	file:
+SendMessage	main.c	/^static int SendMessage(const void* pMsg, int sock)$/;"	f	file:
+SetClockAck_T	codec.h	/^}HeartBeatReq_T,HeartBeatAck_T,SetClockAck_T,CardPresentAck_t,GateOpenReq_T$/;"	t	typeref:struct:HeartBeatReq_tag
+SetClockReq_T	codec.h	/^}SetClockReq_T;$/;"	t	typeref:struct:SetClockReq_tag
+SetClockReq_tag	codec.h	/^typedef struct SetClockReq_tag$/;"	s
+SetListVersion	ulist.c	/^void SetListVersion(unsigned int dwVersionNew)$/;"	f
+Shifthand	display.c	/^static unsigned long Shifthand(long data1,long data2)$/;"	f	file:
+Subscriber_T	Ulist.h	/^}Subscriber_T;$/;"	t	typeref:struct:Subscriber_tag
+Subscriber_tag	Ulist.h	/^typedef struct Subscriber_tag$/;"	s
+TIMER_BASE	main.c	31;"	d	file:
+TIME_CP_REQ	main.c	39;"	d	file:
+TIME_GATE_OPEN	main.c	37;"	d	file:
+TIME_HEART_BEAT	main.c	40;"	d	file:
+TIME_NO_VEHICLE	main.c	35;"	d	file:
+TIME_RESET	main.c	42;"	d	file:
+TIME_SUBSCRIBER	main.c	33;"	d	file:
+TIME_VP_REQ	main.c	38;"	d	file:
+VEHICLE_PRESENT_ACK	codec.h	31;"	d
+VEHICLE_PRESENT_REQ	codec.h	30;"	d
+VEHICLE_PRSNT_TIMER	main.c	44;"	d	file:
+VIRTUAL_SCREEN_X	display.c	20;"	d	file:
+VehiclePresentAck_T	codec.h	/^}OffLineTransReq_T,VehiclePresentReq_T,VehiclePresentAck_T;$/;"	t	typeref:struct:OffLineTransReq_tag
+VehiclePresentReq_T	codec.h	/^}OffLineTransReq_T,VehiclePresentReq_T,VehiclePresentAck_T;$/;"	t	typeref:struct:OffLineTransReq_tag
+WriteListToFile	ulist.c	/^int WriteListToFile(void)$/;"	f
+_CODEC_H_	codec.h	2;"	d
+_LORDWEB_H_	lordweb.h	2;"	d
+_MISC_H_	misc.h	2;"	d
+_ULIST_H_	Ulist.h	2;"	d
+atuoflag	main.c	/^    E_AtuoWork    atuoflag;        \/\/atuo work flag$/;"	m	struct:__anon3	file:
+dwCardNo	Ulist.h	/^    unsigned int dwCardNo;$/;"	m	struct:Subscriber_tag
+dwCardNo	codec.h	/^    unsigned int     dwCardNo;$/;"	m	struct:CardPresentReq_tag
+dwCardNo	codec.h	/^    unsigned int     dwCardNo;$/;"	m	struct:OffLineTransReq_tag
+dwCardNo	codec.h	/^    unsigned int    dwCardNo;$/;"	m	struct:CardInfo_tag
+dwCardNo	main.c	/^    unsigned int    dwCardNo;$/;"	m	struct:OffRecord_tag	file:
+dwListVersion	codec.h	/^    unsigned int     dwListVersion;$/;"	m	struct:ListVerInq_tag
+excute_cmd	misc.c	/^int excute_cmd(long iCmd)$/;"	f
+g_config	main.c	/^}g_config;$/;"	v	typeref:struct:__anon3	file:
+g_iScreen	display.c	/^static long g_iScreen[SCREEN_Y][VIRTUAL_SCREEN_X\/32];$/;"	v	file:
+g_iTextLen	display.c	/^static size_t      g_iTextLen;$/;"	v	file:
+g_xPos	display.c	/^static int  g_xPos;$/;"	v	file:
+iSec	main.c	/^    int             iSec;$/;"	m	struct:OffRecord_tag	file:
+localaddr	main.c	/^    struct sockaddr_in localaddr;  \/\/local ip address$/;"	m	struct:__anon3	typeref:struct:__anon3::sockaddr_in	file:
+main	dumplist.c	/^int main(int argc, char **argv)$/;"	f
+main	main.c	/^int main(int argc, char **argv)$/;"	f
+open_port	rs485.c	/^int open_port(int port_no)$/;"	f
+peeraddr	main.c	/^    struct sockaddr_in peeraddr;   \/\/sever ip address$/;"	m	struct:__anon3	typeref:struct:__anon3::sockaddr_in	file:
+reportflag	main.c	/^    E_Report      reportflag;      \/\/if only have card signed whether report flag $/;"	m	struct:__anon3	file:
+s_dwListVersion	ulist.c	/^unsigned int    s_dwListVersion;                \/\/The version of balck\/white list$/;"	v
+s_dwOffRecord	main.c	/^static unsigned int s_dwOffRecord;$/;"	v	file:
+s_dwSubscribers	ulist.c	/^unsigned int    s_dwSubscribers;                \/\/The number of subscribers kept in s_tSubscriber[]$/;"	v
+s_tOffRecord	main.c	/^static OffRecord_T s_tOffRecord[MAX_OFF_RECORD];$/;"	v	file:
+s_tSubscriber	ulist.c	/^Subscriber_T    s_tSubscriber[MAX_SUBSCRIBER];  \/\/Information of subscribers(main part of balck\/white list)$/;"	v
+s_ucCleanFlag	ulist.c	/^unsigned char   s_ucCleanFlag = 0;          \/\/whether the list is clean(eg:all records are in order and valid)$/;"	v
+set_opt	rs485.c	/^int set_opt(int fd, int nBits, int nSpeed, char nEvent, int nStop)$/;"	f
+szShow	codec.h	/^    char             szShow[MAX_SHOW_LENGTH + 1];$/;"	m	struct:LedShowReq_tag
+tCardInfo	codec.h	/^    CardInfo_T       tCardInfo[MAX_LIST_RECORD];$/;"	m	struct:ListModifyReq_tag
+tCardPresentReq	codec.h	/^    struct CardPresentReq_tag   tCardPresentReq;$/;"	m	union:__anon4	typeref:struct:__anon4::CardPresentReq_tag
+tHeatBeat	codec.h	/^    struct HeartBeatReq_tag     tHeatBeat;$/;"	m	union:__anon4	typeref:struct:__anon4::HeartBeatReq_tag
+tLedShowReq	codec.h	/^    struct LedShowReq_tag       tLedShowReq;$/;"	m	union:__anon4	typeref:struct:__anon4::LedShowReq_tag
+tListModifyReq	codec.h	/^    struct ListModifyReq_tag    tListModifyReq;$/;"	m	union:__anon4	typeref:struct:__anon4::ListModifyReq_tag
+tListVerInq	codec.h	/^    struct ListVerInq_tag       tListVerInq;$/;"	m	union:__anon4	typeref:struct:__anon4::ListVerInq_tag
+tOffLineTransAck	codec.h	/^    struct OffLineTransAck_tag  tOffLineTransAck;$/;"	m	union:__anon4	typeref:struct:__anon4::OffLineTransAck_tag
+tOffLineTransReq	codec.h	/^    struct OffLineTransReq_tag  tOffLineTransReq;$/;"	m	union:__anon4	typeref:struct:__anon4::OffLineTransReq_tag
+tSetClockReq	codec.h	/^    struct SetClockReq_tag      tSetClockReq;$/;"	m	union:__anon4	typeref:struct:__anon4::SetClockReq_tag
+tTime	codec.h	/^    A1Time_T         tTime;$/;"	m	struct:OffLineTransReq_tag
+tTime	codec.h	/^    A1Time_T        tTime;$/;"	m	struct:SetClockReq_tag
+test_vd108	misc.c	/^int test_vd108(void)$/;"	f
+timer	display.c	/^static int  timer;    \/\/timer timer count$/;"	v	file:
+ucDay	codec.h	/^    unsigned char    ucDay;$/;"	m	struct:A1Time_tag
+ucFlags	Ulist.h	/^    unsigned char ucFlags;$/;"	m	struct:Subscriber_tag
+ucHour	codec.h	/^    unsigned char    ucHour;$/;"	m	struct:A1Time_tag
+ucLowBattery	codec.h	/^    unsigned char    ucLowBattery;$/;"	m	struct:CardPresentReq_tag
+ucMinute	codec.h	/^    unsigned char    ucMinute;$/;"	m	struct:A1Time_tag
+ucMonth	codec.h	/^    unsigned char    ucMonth;$/;"	m	struct:A1Time_tag
+ucRecordNum	codec.h	/^    unsigned char    ucRecordNum;$/;"	m	struct:ListModifyReq_tag
+ucSecond	codec.h	/^    unsigned char    ucSecond;$/;"	m	struct:A1Time_tag
+ucSource	codec.h	/^    unsigned char    ucSource;$/;"	m	struct:CardPresentReq_tag
+ucSource	codec.h	/^    unsigned char    ucSource;$/;"	m	struct:HeartBeatReq_tag
+ucSource	codec.h	/^    unsigned char    ucSource;$/;"	m	struct:LedShowReq_tag
+ucSource	codec.h	/^    unsigned char    ucSource;$/;"	m	struct:ListModifyReq_tag
+ucSource	codec.h	/^    unsigned char    ucSource;$/;"	m	struct:ListVerInq_tag
+ucSource	codec.h	/^    unsigned char    ucSource;$/;"	m	struct:OffLineTransAck_tag
+ucSource	codec.h	/^    unsigned char    ucSource;$/;"	m	struct:OffLineTransReq_tag
+ucSource	codec.h	/^    unsigned char   ucSource;$/;"	m	struct:SetClockReq_tag
+ucSource	main.c	/^    unsigned char ucSource;        \/\/device id$/;"	m	struct:__anon3	file:
+ucTmp	codec.h	/^    unsigned char   ucTmp;$/;"	m	struct:CardInfo_tag
+ucTransId	codec.h	/^    unsigned char    ucTransId;$/;"	m	struct:OffLineTransAck_tag
+ucTransId	codec.h	/^    unsigned char    ucTransId;$/;"	m	struct:OffLineTransReq_tag
+ucType	codec.h	/^    unsigned char    ucType;$/;"	m	struct:CardPresentReq_tag
+ucType	codec.h	/^    unsigned char    ucType;$/;"	m	struct:HeartBeatReq_tag
+ucType	codec.h	/^    unsigned char    ucType;$/;"	m	struct:LedShowReq_tag
+ucType	codec.h	/^    unsigned char    ucType;$/;"	m	struct:ListModifyReq_tag
+ucType	codec.h	/^    unsigned char    ucType;$/;"	m	struct:ListVerInq_tag
+ucType	codec.h	/^    unsigned char    ucType;$/;"	m	struct:OffLineTransAck_tag
+ucType	codec.h	/^    unsigned char    ucType;$/;"	m	struct:OffLineTransReq_tag
+ucType	codec.h	/^    unsigned char   ucType;$/;"	m	struct:SetClockReq_tag
+ucValid	codec.h	/^    unsigned char   ucValid;$/;"	m	struct:CardInfo_tag
+ucVersion	codec.h	/^    unsigned char    ucVersion;$/;"	m	struct:CardPresentReq_tag
+ucVersion	codec.h	/^    unsigned char    ucVersion;$/;"	m	struct:HeartBeatReq_tag
+ucVersion	codec.h	/^    unsigned char    ucVersion;$/;"	m	struct:LedShowReq_tag
+ucVersion	codec.h	/^    unsigned char    ucVersion;$/;"	m	struct:ListModifyReq_tag
+ucVersion	codec.h	/^    unsigned char    ucVersion;$/;"	m	struct:ListVerInq_tag
+ucVersion	codec.h	/^    unsigned char    ucVersion;$/;"	m	struct:OffLineTransAck_tag
+ucVersion	codec.h	/^    unsigned char    ucVersion;$/;"	m	struct:OffLineTransReq_tag
+ucVersion	codec.h	/^    unsigned char   ucVersion;$/;"	m	struct:SetClockReq_tag
+ucYear	codec.h	/^    unsigned char    ucYear;$/;"	m	struct:A1Time_tag

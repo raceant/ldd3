@@ -1,0 +1,1806 @@
+cscope 15 $HOME/data/CON100/driver -q 0000000199 0000010087
+	@lordweb.c
+
+8 
+	~<löux/miscdevi˚.h
+>
+
+9 
+	~<löux/dñay.h
+>
+
+10 
+	~<löux/úq.h
+>
+
+11 
+	~<asm/úq.h
+>
+
+12 
+	~<löux/öãºu±.h
+>
+
+13 
+	~<mach/ªgs-gpio.h
+>
+
+14 
+	~<mach/ªgs-úq.h
+>
+
+15 
+	~<mach/h¨dw¨e.h
+>
+
+16 
+	~<∂©/ªgs-timî.h
+>
+
+17 
+	~<löux/˛k.h
+>
+
+18 
+	~<löux/kî√l.h
+>
+
+19 
+	~<löux/moduÀ.h
+>
+
+20 
+	~<löux/öô.h
+>
+
+21 
+	~<löux/mm.h
+>
+
+22 
+	~<löux/fs.h
+>
+
+23 
+	~<löux/ty≥s.h
+>
+
+24 
+	~<löux/dñay.h
+>
+
+25 
+	~<löux/moduÀ∑øm.h
+>
+
+26 
+	~<löux/¶ab.h
+>
+
+27 
+	~<löux/î∫o.h
+>
+
+28 
+	~<löux/io˘l.h
+>
+
+29 
+	~<löux/cdev.h
+>
+
+30 
+	~<löux/°rög.h
+>
+
+31 
+	~<löux/li°.h
+>
+
+32 
+	~<löux/pci.h
+>
+
+33 
+	~<asm/uac˚ss.h
+>
+
+34 
+	~<asm/©omic.h
+>
+
+35 
+	~<asm/uni°d.h
+>
+
+36 
+	~"l‹dweb.h
+"
+
+40 
+	#DEVICE_NAME
+ "L‹d-C⁄åﬁ"
+
+	)
+
+42 
+	#LORD_SEEK_SET
+ (1)
+
+43 
+	#LORD_END_WRITE
+ (2)
+
+44 
+	#LORD_WRITE
+ (3)
+
+45 
+	#LORD_IO_WRITE
+ (4)
+
+	)
+
+46 
+	#LORD_RS485_READ
+ (5)
+
+	)
+
+48 
+	#LORD_UP_ON
+ (0x00000001)
+
+	)
+
+49 
+	#LORD_UP_OFF
+ (0x00000002)
+
+	)
+
+50 
+	#LORD_DOWN_ON
+ (0x00000004)
+
+	)
+
+51 
+	#LORD_DOWN_OFF
+ (0x00000008)
+
+	)
+
+52 
+	#LORD_RS485_TX
+ (0x00000010)
+
+	)
+
+53 
+	#LORD_RS485_RX
+ (0x00000020)
+
+	)
+
+55 
+	#SCREEN_X
+ 64
+
+	)
+
+56 
+	#SCREEN_Y
+ 16
+
+	)
+
+57 
+	#SCREEN_BUFF_SIZE
+ (
+SCREEN_X
+ * 
+SCREEN_Y
+ / 8)
+
+	)
+
+60 
+	gg_S¸Buff
+[2 * 
+SCREEN_BUFF_SIZE
+ + 4];
+
+61 
+	gg_iCuºítBuffNum
+;
+
+62 
+	gg_iWrOff£t
+;
+
+66 
+	mpö
+;
+
+67 
+	mfunc
+;
+
+68 }
+	tPös_T
+;
+
+70 
+	#PIN_LED_A
+ 0
+
+	)
+
+71 
+	#PIN_LED_B
+ 1
+
+	)
+
+72 
+	#PIN_LED_C
+ 2
+
+	)
+
+73 
+	#PIN_LED_D
+ 3
+
+	)
+
+74 
+	#PIN_LED_ENABLE
+ 4
+
+	)
+
+75 
+	#PIN_LED_LATCH
+ 5
+
+	)
+
+76 
+	#PIN_LED_CLK
+ 6
+
+	)
+
+77 
+	#PIN_LED_DATA
+ 7
+
+	)
+
+78 
+	#PIN_VD108_STAT
+ 8
+
+	)
+
+79 
+	#PIN_UP
+ 9
+
+	)
+
+80 
+	#PIN_DOWN
+ 10
+
+	)
+
+81 
+	#PIN_RUN
+ 11
+
+	)
+
+82 
+	#PIN_485_DIR
+ 12
+
+	)
+
+85 
+Pös_T
+ 
+	gg_pös
+[] = {
+
+87 {
+S3C2410_GPF4
+,
+S3C2410_GPF4_OUTP
+},
+
+88 {
+S3C2410_GPF5
+,
+S3C2410_GPF5_OUTP
+},
+
+89 {
+S3C2410_GPF6
+,
+S3C2410_GPF6_OUTP
+},
+
+90 {
+S3C2410_GPG0
+,
+S3C2410_GPG0_OUTP
+},
+
+93 {
+S3C2410_GPG3
+,
+S3C2410_GPG3_OUTP
+},
+
+95 {
+S3C2410_GPG5
+,
+S3C2410_GPG5_OUTP
+},
+
+97 {
+S3C2410_GPG11
+,
+S3C2410_GPG11_OUTP
+},
+
+99 {
+S3C2410_GPG6
+,
+S3C2410_GPG6_OUTP
+},
+
+102 {
+S3C2410_GPF1
+,
+S3C2410_GPF1_INP
+},
+
+104 {
+S3C2410_GPB5
+,
+S3C2410_GPB5_OUTP
+},
+
+106 {
+S3C2410_GPB6
+,
+S3C2410_GPB6_OUTP
+},
+
+108 {
+S3C2410_GPB8
+,
+S3C2410_GPB8_OUTP
+},
+
+110 {
+S3C2410_GPG10
+,
+S3C2410_GPG10_OUTP
+}
+
+113 
+	$InôTimî1
+()
+
+115 
+tcfg0
+;
+
+116 
+tcfg1
+;
+
+117 
+t˙tb
+;
+
+118 
+tcmpb
+;
+
+119 
+tc⁄
+;
+
+121 
+˛k
+ *
+˛k_p
+;
+
+122 
+p˛k
+;
+
+123 
+tc⁄
+ = 
+	`__øw_ªadl
+(
+S3C2410_TCON
+);
+
+124 
+tcfg1
+ = 
+	`__øw_ªadl
+(
+S3C2410_TCFG1
+);
+
+125 
+tcfg0
+ = 
+	`__øw_ªadl
+(
+S3C2410_TCFG0
+);
+
+128 
+tcfg0
+ &~
+S3C2410_TCFG_PRESCALER0_MASK
+;
+
+129 
+tcfg0
+ |= (10 - 1);
+
+132 
+tcfg1
+ &~
+S3C2410_TCFG1_MUX1_MASK
+;
+
+133 
+tcfg1
+ |
+S3C2410_TCFG1_MUX1_DIV16
+;
+
+135 
+	`__øw_wrôñ
+(
+tcfg1
+, 
+S3C2410_TCFG1
+);
+
+136 
+	`__øw_wrôñ
+(
+tcfg0
+, 
+S3C2410_TCFG0
+);
+
+138 
+˛k_p
+ = 
+	`˛k_gë
+(
+NULL
+, "pclk");
+
+139 
+p˛k
+ = 
+	`˛k_gë_øã
+(
+˛k_p
+);
+
+140 
+t˙tb
+ = (
+p˛k
+/128);
+
+141 
+tcmpb
+ = 
+t˙tb
+>>1;
+
+143 
+	`__øw_wrôñ
+(100, 
+	`S3C2410_TCNTB
+(1));
+
+144 
+	`__øw_wrôñ
+(50, 
+	`S3C2410_TCMPB
+(1));
+
+146 
+tc⁄
+ &= ~0xf00;
+
+147 
+tc⁄
+ |= 0xb00;
+
+148 
+	`__øw_wrôñ
+(
+tc⁄
+, 
+S3C2410_TCON
+);
+
+149 
+tc⁄
+ &= ~0x200;
+
+150 
+	`__øw_wrôñ
+(
+tc⁄
+, 
+S3C2410_TCON
+);
+
+153 
+	}
+}
+
+155 
+	$l‹d_io˘l
+(
+
+156 
+öode
+ *inode,
+
+157 
+fûe
+ *file,
+
+158 
+cmd
+,
+
+159 
+¨g
+)
+
+161 *
+pBuff
+;
+
+163 
+cmd
+)
+
+165 
+LORD_SEEK_SET
+:
+
+166 
+g_iWrOff£t
+ = 0;
+
+167 
+	`mem£t
+(
+g_S¸Buff
+, 0x00, (g_ScrBuff));
+
+169 
+LORD_END_WRITE
+:
+
+170 
+g_iWrOff£t
+ = 0;
+
+171 
+g_iCuºítBuffNum
+ = (g_iCurrentBuffNum) ? 0 : 1;
+
+173 
+LORD_WRITE
+:
+
+174 
+pBuff
+ = (
+g_iCuºítBuffNum
+Ë? 
+g_S¸Buff
+ : g_S¸Buf‡+ 
+SCREEN_BUFF_SIZE
+;
+
+175 i‡(
+g_iWrOff£t
+ >
+SCREEN_BUFF_SIZE
+)
+
+176 
+g_iWrOff£t
+ = 0;
+
+177 
+pBuff
+ +
+g_iWrOff£t
+;
+
+178 *(*)
+pBuff
+ = 
+¨g
+;
+
+179 
+g_iWrOff£t
+ += 4;
+
+181 
+LORD_IO_WRITE
+:
+
+182 i‡(
+LORD_UP_ON
+ & 
+¨g
+)
+
+183 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_UP
+].
+pö
+, 1);
+
+184 i‡(
+LORD_UP_OFF
+ & 
+¨g
+)
+
+185 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_UP
+].
+pö
+, 0);
+
+186 i‡(
+LORD_DOWN_ON
+ & 
+¨g
+)
+
+187 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_DOWN
+].
+pö
+, 1);
+
+188 i‡(
+LORD_DOWN_OFF
+ & 
+¨g
+)
+
+189 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_DOWN
+].
+pö
+, 0);
+
+190 i‡(
+LORD_RS485_TX
+ & 
+¨g
+)
+
+191 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_485_DIR
+].
+pö
+, 1);
+
+192 i‡(
+LORD_RS485_RX
+ & 
+¨g
+)
+
+193 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_485_DIR
+].
+pö
+, 0);
+
+199 
+	}
+}
+
+201 
+úqªtu∫_t
+ 
+	$úq_öãºu±
+(
+úq
+, *
+dev_id
+)
+
+203 
+iLöes
+ = 0;
+
+204 
+iCﬁumn
+;
+
+205 *
+pD©a
+;
+
+206 
+mask
+;
+
+209 
+	`__øw_wrôñ
+(0x800, 
+S3C2410_SRCPND
+);
+
+210 
+	`__øw_wrôñ
+(0x800, 
+S3C2410_INTPND
+);
+
+212 
+pD©a
+ = 
+g_S¸Buff
+;
+
+213 i‡(
+g_iCuºítBuffNum
+)
+
+214 
+pD©a
+ +
+SCREEN_BUFF_SIZE
+;
+
+215 
+pD©a
+ +(
+SCREEN_X
+/8)* (
+iLöes
+ & 0x0F);
+
+217 
+mask
+ = 0x80;
+
+218 
+iCﬁumn
+ = 0; iCﬁum¿< 
+SCREEN_X
+; iColumn++)
+
+221 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_LED_DATA
+].
+pö
+, (*
+pD©a
+ & 
+mask
+) ? 0 : 1);
+
+222 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_LED_CLK
+].
+pö
+, 1);
+
+223 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_LED_CLK
+].
+pö
+, 0);
+
+224 
+mask
+ >>= 1;
+
+225 i‡(0 =
+mask
+) {
+
+226 
+mask
+ = 0x80;
+
+227 
+pD©a
+++;
+
+230 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_LED_ENABLE
+].
+pö
+, 1);
+
+231 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_LED_LATCH
+].
+pö
+, 1);
+
+232 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_LED_LATCH
+].
+pö
+, 0);
+
+234 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_LED_A
+].
+pö
+, (
+iLöes
+ & 0x01) ? 1 : 0);
+
+235 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_LED_B
+].
+pö
+, (
+iLöes
+ & 0x02) ? 1 : 0);
+
+236 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_LED_C
+].
+pö
+, (
+iLöes
+ & 0x04) ? 1 : 0);
+
+237 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_LED_D
+].
+pö
+, (
+iLöes
+ & 0x08) ? 1 : 0);
+
+238 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_LED_ENABLE
+].
+pö
+, 0);
+
+241 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_RUN
+].
+pö
+, (
+iLöes
+ & 0x800) ? 1 : 0);
+
+243 
+iLöes
+++;
+
+246  
+	`IRQ_RETVAL
+(
+IRQ_HANDLED
+);
+
+247 
+	}
+}
+
+249 
+	$l‹d_úq_pﬁl
+–
+fûe
+ *fûe, 
+pﬁl_èbÀ_°ru˘
+ *
+waô
+)
+
+251 
+mask
+ = 0;
+
+252 
+	`¥ötk
+ (
+DEVICE_NAME
+"Öolling\n");
+
+253  
+mask
+;
+
+254 
+	}
+}
+
+257 
+	$l‹d_úq_›í
+(
+öode
+ *öode, 
+fûe
+ *file)
+
+265 
+	}
+}
+
+268 
+	$l‹d_úq_˛o£
+(
+öode
+ *öode, 
+fûe
+ *file)
+
+274 
+	}
+}
+
+276 
+fûe_›î©i⁄s
+ 
+	gdev_f›s
+ = {
+
+277 .
+ow√r
+ = 
+THIS_MODULE
+,
+
+278 .
+	gio˘l
+ = 
+l‹d_io˘l
+,
+
+279 .
+	g›í
+ = 
+l‹d_úq_›í
+,
+
+280 .
+	gªÀa£
+
+l‹d_úq_˛o£
+,
+
+281 .
+	gpﬁl
+ = 
+l‹d_úq_pﬁl
+,
+
+284 
+miscdevi˚
+ 
+	gmisc
+ = {
+
+285 .
+mö‹
+ = 
+MISC_DYNAMIC_MINOR
+,
+
+286 .
+	g«me
+ = 
+DEVICE_NAME
+,
+
+287 .
+	gf›s
+ = &
+dev_f›s
+,
+
+290 
+__öô
+ 
+	$l‹dweb_öô
+()
+
+292 
+i
+;
+
+293 
+ªt
+;
+
+294 * 
+«me
+ = "lord_timer1";
+
+296 
+g_iCuºítBuffNum
+ = 0;
+
+297 
+g_iWrOff£t
+ = 0;
+
+298 
+	`mem£t
+(
+g_S¸Buff
+, 0x05, (g_ScrBuff));
+
+300 
+i
+ = 0; i < (
+g_pös
+)/(g_pins[0]); i++)
+
+302 
+	`s3c2410_gpio_cfgpö
+(
+g_pös
+[
+i
+].
+pö
+, g_pös[i].
+func
+);
+
+303 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+i
+].
+pö
+, 1);
+
+305 
+	`s3c2410_gpio_£çö
+(
+g_pös
+[
+PIN_485_DIR
+].
+pö
+, 0);
+
+306 
+ªt
+ = 
+	`misc_ªgi°î
+(&
+misc
+);
+
+307 i‡(
+ªt
+)
+
+308  
+ªt
+;
+
+310 
+ªt
+ = 
+	`ªque°_úq
+(
+IRQ_TIMER1
+, 
+úq_öãºu±
+, 
+IRQ_TYPE_EDGE_BOTH
+,
+
+311 
+«me
+, 
+NULL
+);
+
+312 
+	`InôTimî1
+();
+
+314 
+	`¥ötk
+ (
+DEVICE_NAME
+" initialized\n");
+
+315  
+ªt
+;
+
+316 
+	}
+}
+
+318 
+__exô
+ 
+	$l‹dweb_exô
+()
+
+320 
+	`‰ì_úq
+(
+IRQ_TIMER1
+, 
+NULL
+);
+
+321 
+	`misc_dîegi°î
+(&
+misc
+);
+
+322 
+	`¥ötk
+ (
+DEVICE_NAME
+"Ñemoved\n");
+
+323 
+	}
+}
+
+325 
+moduÀ_öô
+(
+l‹dweb_öô
+);
+
+326 
+moduÀ_exô
+(
+l‹dweb_exô
+);
+
+328 
+MODULE_LICENSE
+("GPL");
+
+329 
+MODULE_AUTHOR
+("www.ribeto.com");
+
+330 
+MODULE_DESCRIPTION
+("Lord Web's First moduleÅest");
+
+	@lordweb.h
+
+1 #i‚de‡
+_LORDWEB_H_
+
+
+2 
+	#_LORDWEB_H_
+
+
+	)
+
+4 
+	#LORD_SEEK_SET
+ (1)
+
+5 
+	#LORD_END_WRITE
+ (2)
+
+6 
+	#LORD_WRITE
+ (3)
+
+7 
+	#LORD_IO_WRITE
+ (4)
+
+	)
+
+8 
+	#LORD_VEHICLE_STAT
+ (5)
+
+9 
+
+	)
+
+10 
+	#LORD_UP_ON
+ (0x00000001)
+
+	)
+
+11 
+	#LORD_UP_OFF
+ (0x00000002)
+
+	)
+
+12 
+	#LORD_DOWN_ON
+ (0x00000004)
+
+	)
+
+13 
+	#LORD_DOWN_OFF
+ (0x00000008)
+
+	)
+
+14 
+	#LORD_RS485_TX
+ (0x00000010)
+
+	)
+
+15 
+	#LORD_RS485_RX
+ (0x00000020)
+
+	)
+
+	@vd108b.c
+
+8 
+	~<löux/miscdevi˚.h
+>
+
+9 
+	~<löux/dñay.h
+>
+
+10 
+	~<löux/úq.h
+>
+
+11 
+	~<asm/úq.h
+>
+
+12 
+	~<löux/öãºu±.h
+>
+
+13 
+	~<mach/ªgs-gpio.h
+>
+
+14 
+	~<mach/ªgs-úq.h
+>
+
+15 
+	~<mach/h¨dw¨e.h
+>
+
+16 
+	~<∂©/ªgs-timî.h
+>
+
+17 
+	~<löux/˛k.h
+>
+
+18 
+	~<löux/kî√l.h
+>
+
+19 
+	~<löux/moduÀ.h
+>
+
+20 
+	~<löux/öô.h
+>
+
+21 
+	~<löux/mm.h
+>
+
+22 
+	~<löux/fs.h
+>
+
+23 
+	~<löux/ty≥s.h
+>
+
+24 
+	~<löux/dñay.h
+>
+
+25 
+	~<löux/moduÀ∑øm.h
+>
+
+26 
+	~<löux/¶ab.h
+>
+
+27 
+	~<löux/î∫o.h
+>
+
+28 
+	~<löux/io˘l.h
+>
+
+29 
+	~<löux/cdev.h
+>
+
+30 
+	~<löux/°rög.h
+>
+
+31 
+	~<löux/li°.h
+>
+
+32 
+	~<löux/pci.h
+>
+
+33 
+	~<asm/uac˚ss.h
+>
+
+34 
+	~<asm/©omic.h
+>
+
+35 
+	~<asm/uni°d.h
+>
+
+39 
+	#DEVICE_NAME
+ "VD108B"
+
+	)
+
+42 
+	#VD108_PIN
+ 
+S3C2410_GPF1
+
+
+	)
+
+43 
+	#VD108_FUNC
+ 
+S3C2410_GPF1_INP
+
+
+	)
+
+44 
+	#UP_PIN
+ 
+S3C2410_GPB5
+
+
+	)
+
+45 
+	#UP_FINC
+ 
+S3C2410_GPB5_OUTP
+
+
+	)
+
+46 
+	#DOWN_PIN
+ 
+S3C2410_GPB6
+
+
+	)
+
+47 
+	#DOWN_FINC
+ 
+S3C2410_GPB6_OUTP
+
+
+	)
+
+48 
+	#RUN_PIN
+ 
+S3C2410_GPB8
+
+
+	)
+
+49 
+	#RUN_FINC
+ 
+S3C2410_GPB8_OUTP
+
+
+	)
+
+50 
+	#RUN_PIN
+ 
+S3C2410_GPG10
+
+
+	)
+
+51 
+	#RUN_FINC
+ 
+S3C2410_GPG10_OUTP
+
+
+	)
+
+53 
+	$vd108_ªad
+(
+fûe
+ *
+fûp
+, 
+__u£r
+ *
+buff
+, 
+size_t
+ 
+cou¡
+, 
+loff_t
+ *
+ofÂ
+)
+
+55 
+îr
+;
+
+56 
+down
+;
+
+58 
+down
+ = !
+	`s3c2410_gpio_gëpö
+(
+VD108_PIN
+);
+
+60 
+îr
+ = 
+	`c›y_to_u£r
+(
+buff
+, (c⁄° *)&
+down
+, 
+	`mö
+((down), 
+cou¡
+));
+
+62  
+îr
+ ? -
+EFAULT
+ : 
+	`mö
+((
+down
+), 
+cou¡
+);
+
+63 
+	}
+}
+
+65 
+	$vd108_pﬁl
+–
+fûe
+ *fûe, 
+pﬁl_èbÀ_°ru˘
+ *
+waô
+)
+
+69 
+	}
+}
+
+72 
+	$vd108_›í
+(
+öode
+ *öode, 
+fûe
+ *file)
+
+76 
+	}
+}
+
+79 
+	$vd108_˛o£
+(
+öode
+ *öode, 
+fûe
+ *file)
+
+83 
+	}
+}
+
+85 
+fûe_›î©i⁄s
+ 
+	gdev_f›s
+ = {
+
+86 .
+ow√r
+ = 
+THIS_MODULE
+,
+
+87 .
+	gªad
+ = 
+vd108_ªad
+,
+
+88 .
+	g›í
+ = 
+vd108_›í
+,
+
+89 .
+	gªÀa£
+
+vd108_˛o£
+,
+
+90 .
+	gpﬁl
+ = 
+vd108_pﬁl
+,
+
+93 
+miscdevi˚
+ 
+	gmisc
+ = {
+
+94 .
+mö‹
+ = 
+MISC_DYNAMIC_MINOR
+,
+
+95 .
+	g«me
+ = 
+DEVICE_NAME
+,
+
+96 .
+	gf›s
+ = &
+dev_f›s
+,
+
+99 
+__öô
+ 
+	$l‹dweb_öô
+()
+
+101 
+ªt
+;
+
+103 
+	`s3c2410_gpio_cfgpö
+(
+S3C2410_GPF2
+,
+S3C2410_GPF2_INP
+);
+
+104 
+ªt
+ = 
+	`misc_ªgi°î
+(&
+misc
+);
+
+106  
+ªt
+;
+
+107 
+	}
+}
+
+109 
+__exô
+ 
+	$l‹dweb_exô
+()
+
+111 
+	`misc_dîegi°î
+(&
+misc
+);
+
+113 
+	}
+}
+
+115 
+moduÀ_öô
+(
+l‹dweb_öô
+);
+
+116 
+moduÀ_exô
+(
+l‹dweb_exô
+);
+
+118 
+MODULE_LICENSE
+("GPL");
+
+119 
+MODULE_AUTHOR
+("www.ribeto.com");
+
+120 
+MODULE_DESCRIPTION
+("rebito vd108b vehicle detector driver");
+
+	@
+1
+.
+0
+3
+29
+lordweb.c
+lordweb.h
+vd108b.c
