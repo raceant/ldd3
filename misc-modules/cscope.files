@@ -1,0 +1,12 @@
+./jiq.c
+./faulty.c
+./complete.c
+./jit.c
+./sleepy.c
+./seq.c
+./silly.c
+./faulty.mod.c
+./hello.c
+./kdatasize.c
+./kdataalign.c
+./hellop.c

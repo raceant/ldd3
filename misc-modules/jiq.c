@@ -14,8 +14,7 @@
  *
  * $Id: jiq.c,v 1.7 2004/09/26 07:02:43 gregkh Exp $
  */
- 
-#include <linux/config.h>
+
 #include <linux/module.h>
 #include <linux/moduleparam.h>
 #include <linux/init.h>
@@ -53,7 +52,11 @@ module_param(delay, long, 0);
 static DECLARE_WAIT_QUEUE_HEAD (jiq_wait);
 
 
-static struct work_struct jiq_work;
+//static struct work_struct jiq_work;
+static struct delayed_work_ldd3_t {
+	struct delayed_work delayed_work;
+	void *ptr;
+}delayed_work_ldd3;
 
 
 
@@ -85,7 +88,7 @@ static int jiq_print(void *ptr)
 	char *buf = data->buf;
 	unsigned long j = jiffies;
 
-	if (len > LIMIT) { 
+	if (len > LIMIT) {
 		wake_up_interruptible(&jiq_wait);
 		return 0;
 	}
@@ -111,17 +114,21 @@ static int jiq_print(void *ptr)
 /*
  * Call jiq_print from a work queue
  */
-static void jiq_print_wq(void *ptr)
+static void jiq_print_wq(struct work_struct *ptr)
 {
-	struct clientdata *data = (struct clientdata *) ptr;
-    
-	if (! jiq_print (ptr))
+	//struct delayed_work *p_delayed_work = to_delayed_work(ptr);
+	struct delayed_work *p_delayed_work = container_of(ptr, struct delayed_work, work);
+	struct delayed_work_ldd3_t *p_delayed_work_ldd3 = container_of(p_delayed_work,struct delayed_work_ldd3_t, delayed_work);
+
+	struct clientdata *data = (struct clientdata *)p_delayed_work_ldd3->ptr;
+
+	if (! jiq_print (data))
 		return;
-    
+
 	if (data->delay)
-		schedule_delayed_work(&jiq_work, data->delay);
+		schedule_delayed_work(p_delayed_work, data->delay);
 	else
-		schedule_work(&jiq_work);
+		schedule_work(ptr);
 }
 
 
@@ -130,14 +137,14 @@ static int jiq_read_wq(char *buf, char **start, off_t offset,
                    int len, int *eof, void *data)
 {
 	DEFINE_WAIT(wait);
-	
+
 	jiq_data.len = 0;                /* nothing printed, yet */
 	jiq_data.buf = buf;              /* print in this place */
 	jiq_data.jiffies = jiffies;      /* initial time */
 	jiq_data.delay = 0;
-    
+
 	prepare_to_wait(&jiq_wait, &wait, TASK_INTERRUPTIBLE);
-	schedule_work(&jiq_work);
+	schedule_work(&(delayed_work_ldd3.delayed_work.work));
 	schedule();
 	finish_wait(&jiq_wait, &wait);
 
@@ -150,14 +157,14 @@ static int jiq_read_wq_delayed(char *buf, char **start, off_t offset,
                    int len, int *eof, void *data)
 {
 	DEFINE_WAIT(wait);
-	
+
 	jiq_data.len = 0;                /* nothing printed, yet */
 	jiq_data.buf = buf;              /* print in this place */
 	jiq_data.jiffies = jiffies;      /* initial time */
 	jiq_data.delay = delay;
-    
+
 	prepare_to_wait(&jiq_wait, &wait, TASK_INTERRUPTIBLE);
-	schedule_delayed_work(&jiq_work, delay);
+	schedule_delayed_work(&(delayed_work_ldd3.delayed_work), delay);
 	schedule();
 	finish_wait(&jiq_wait, &wait);
 
@@ -226,7 +233,7 @@ static int jiq_read_run_timer(char *buf, char **start, off_t offset,
 	add_timer(&jiq_timer);
 	interruptible_sleep_on(&jiq_wait);  /* RACE */
 	del_timer_sync(&jiq_timer);  /* in case a signal woke us up */
-    
+
 	*eof = 1;
 	return jiq_data.len;
 }
@@ -240,8 +247,9 @@ static int jiq_read_run_timer(char *buf, char **start, off_t offset,
 static int jiq_init(void)
 {
 
+	delayed_work_ldd3.ptr = (void *)&jiq_data;
 	/* this line is in jiq_init() */
-	INIT_WORK(&jiq_work, jiq_print_wq, &jiq_data);
+	INIT_DELAYED_WORK(&(delayed_work_ldd3.delayed_work), jiq_print_wq);
 
 	create_proc_read_entry("jiqwq", 0, NULL, jiq_read_wq, NULL);
 	create_proc_read_entry("jiqwqdelay", 0, NULL, jiq_read_wq_delayed, NULL);

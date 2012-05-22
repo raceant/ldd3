@@ -4,7 +4,7 @@ DEBUG = y
 
 
 ifneq ($(KERNELRELEASE),)
-		obj-m := sleepy.o 
+		obj-m := jiq.o 
 
 # Otherwise we were called directly from the command
 # line; invoke the kernel build system.
