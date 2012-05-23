@@ -20,4 +20,6 @@ a.out
 *.lst
 *.symtypes
 *~
+*.out
+*.swp
 tags
