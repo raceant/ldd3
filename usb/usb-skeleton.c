@@ -7,13 +7,12 @@
  *	modify it under the terms of the GNU General Public License as
  *	published by the Free Software Foundation, version 2.
  *
- * This driver is based on the 2.6.3 version of drivers/usb/usb-skeleton.c 
+ * This driver is based on the 2.6.3 version of drivers/usb/usb-skeleton.c
  * but has been rewritten to be easy to read and use, as no locks are now
  * needed anymore.
  *
  */
 
-#include <linux/config.h>
 #include <linux/kernel.h>
 #include <linux/errno.h>
 #include <linux/init.h>
@@ -31,7 +30,8 @@
 
 /* table of devices that work with this driver */
 static struct usb_device_id skel_table [] = {
-	{ USB_DEVICE(USB_SKEL_VENDOR_ID, USB_SKEL_PRODUCT_ID) },
+//	{ USB_DEVICE(USB_SKEL_VENDOR_ID, USB_SKEL_PRODUCT_ID) },
+	{.driver_info = 42 },  // all usb device will call driver
 	{ }					/* Terminating entry */
 };
 MODULE_DEVICE_TABLE (usb, skel_table);
@@ -55,7 +55,7 @@ struct usb_skel {
 static struct usb_driver skel_driver;
 
 static void skel_delete(struct kref *kref)
-{	
+{
 	struct usb_skel *dev = to_skel_dev(kref);
 
 	usb_put_dev(dev->udev);
@@ -85,7 +85,7 @@ static int skel_open(struct inode *inode, struct file *file)
 		retval = -ENODEV;
 		goto exit;
 	}
-	
+
 	/* increment our usage count for the device */
 	kref_get(&dev->kref);
 
@@ -115,7 +115,7 @@ static ssize_t skel_read(struct file *file, char __user *buffer, size_t count, l
 	int retval = 0;
 
 	dev = (struct usb_skel *)file->private_data;
-	
+
 	/* do a blocking bulk read to get data from the device */
 	retval = usb_bulk_msg(dev->udev,
 			      usb_rcvbulkpipe(dev->udev, dev->bulk_in_endpointAddr),
@@ -134,11 +134,11 @@ static ssize_t skel_read(struct file *file, char __user *buffer, size_t count, l
 	return retval;
 }
 
-static void skel_write_bulk_callback(struct urb *urb, struct pt_regs *regs)
+static void skel_write_bulk_callback(struct urb *urb)
 {
 	/* sync/async unlink faults aren't errors */
-	if (urb->status && 
-	    !(urb->status == -ENOENT || 
+	if (urb->status &&
+	    !(urb->status == -ENOENT ||
 	      urb->status == -ECONNRESET ||
 	      urb->status == -ESHUTDOWN)) {
 		dbg("%s - nonzero write bulk status received: %d",
@@ -146,7 +146,7 @@ static void skel_write_bulk_callback(struct urb *urb, struct pt_regs *regs)
 	}
 
 	/* free up our allocated buffer */
-	usb_buffer_free(urb->dev, urb->transfer_buffer_length, 
+	usb_buffer_free(urb->dev, urb->transfer_buffer_length,
 			urb->transfer_buffer, urb->transfer_dma);
 }
 
@@ -214,14 +214,14 @@ static struct file_operations skel_fops = {
 	.release =	skel_release,
 };
 
-/* 
+/*
  * usb class driver info in order to get a minor number from the usb core,
  * and to have the device registered with devfs and the driver core
  */
 static struct usb_class_driver skel_class = {
 	.name = "usb/skel%d",
 	.fops = &skel_fops,
-	.mode = S_IFCHR | S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH,
+	//.mode = S_IFCHR | S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH,
 	.minor_base = USB_SKEL_MINOR_BASE,
 };
 
@@ -293,7 +293,7 @@ static int skel_probe(struct usb_interface *interface, const struct usb_device_i
 	}
 
 	/* let the user know what node this device is now attached to */
-	info("USB Skeleton device now attached to USBSkel-%d", interface->minor);
+	printk("USB Skeleton device now attached to USBSkel-%d", interface->minor);
 	return 0;
 
 error:
@@ -325,7 +325,7 @@ static void skel_disconnect(struct usb_interface *interface)
 }
 
 static struct usb_driver skel_driver = {
-	.owner = THIS_MODULE,
+//	.owner = THIS_MODULE,
 	.name = "skeleton",
 	.id_table = skel_table,
 	.probe = skel_probe,
