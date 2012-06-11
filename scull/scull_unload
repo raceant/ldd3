@@ -14,7 +14,3 @@ rm -f /dev/${device}single
 rm -f /dev/${device}uid
 rm -f /dev/${device}wuid
 
-
-
-
-

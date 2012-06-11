@@ -15,7 +15,6 @@
  * $Id: _main.c.in,v 1.21 2004/10/14 20:11:39 corbet Exp $
  */
 
-#include <linux/config.h>
 #include <linux/module.h>
 #include <linux/moduleparam.h>
 #include <linux/init.h>
@@ -155,7 +154,7 @@ int sculld_release (struct inode *inode, struct file *filp)
 }
 
 /*
- * Follow the list 
+ * Follow the list
  */
 struct sculld_dev *sculld_follow(struct sculld_dev *dev, int n)
 {
@@ -187,7 +186,7 @@ ssize_t sculld_read (struct file *filp, char __user *buf, size_t count,
 
 	if (down_interruptible (&dev->sem))
 		return -ERESTARTSYS;
-	if (*f_pos > dev->size) 
+	if (*f_pos > dev->size)
 		goto nothing;
 	if (*f_pos + count > dev->size)
 		count = dev->size - *f_pos;
@@ -264,7 +263,7 @@ ssize_t sculld_write (struct file *filp, const char __user *buf, size_t count,
 		goto nomem;
 	}
 	*f_pos += count;
- 
+
     	/* update the size */
 	if (dev->size < *f_pos)
 		dev->size = *f_pos;
@@ -409,31 +408,35 @@ loff_t sculld_llseek (struct file *filp, loff_t off, int whence)
 struct async_work {
 	struct kiocb *iocb;
 	int result;
-	struct work_struct work;
+	//struct work_struct work;
+	struct delayed_work work;
 };
 
 /*
  * "Complete" an asynchronous operation.
  */
-static void sculld_do_deferred_op(void *p)
+static void sculld_do_deferred_op(struct work_struct *work)
 {
-	struct async_work *stuff = (struct async_work *) p;
+	struct async_work *stuff = container_of(work, struct async_work, work.work);
 	aio_complete(stuff->iocb, stuff->result, 0);
 	kfree(stuff);
 }
 
 
-static int sculld_defer_op(int write, struct kiocb *iocb, char __user *buf,
-		size_t count, loff_t pos)
+//static int sculld_defer_op(int write, struct kiocb *iocb, char __user *buf,
+//		size_t count, loff_t pos)
+static int sculld_defer_op(int write, struct kiocb *iocb, const struct iovec *iov,unsigned long niov, loff_t pos)
 {
 	struct async_work *stuff;
 	int result;
 
 	/* Copy now while we can access the buffer */
 	if (write)
-		result = sculld_write(iocb->ki_filp, buf, count, &pos);
+	//	result = sculld_write(iocb->ki_filp, buf, count, &pos);
+		result = sculld_write(iocb->ki_filp, (char *)(iov->iov_base), iov->iov_len, &pos);
 	else
-		result = sculld_read(iocb->ki_filp, buf, count, &pos);
+		//result = sculld_read(iocb->ki_filp, buf, count, &pos);
+		result = sculld_read(iocb->ki_filp, (char *)(iov->iov_base), iov->iov_len, &pos);
 
 	/* If this is a synchronous IOCB, we return our status now. */
 	if (is_sync_kiocb(iocb))
@@ -445,26 +448,34 @@ static int sculld_defer_op(int write, struct kiocb *iocb, char __user *buf,
 		return result; /* No memory, just complete now */
 	stuff->iocb = iocb;
 	stuff->result = result;
-	INIT_WORK(&stuff->work, sculld_do_deferred_op, stuff);
+	INIT_WORK(&stuff->work.work, sculld_do_deferred_op);
 	schedule_delayed_work(&stuff->work, HZ/100);
 	return -EIOCBQUEUED;
 }
 
 
-static ssize_t sculld_aio_read(struct kiocb *iocb, char __user *buf, size_t count,
-		loff_t pos)
+//static ssize_t sculld_aio_read(struct kiocb *iocb, char __user *buf, size_t count,
+//		loff_t pos)
+static ssize_t sculld_aio_read(struct kiocb *iocb, const struct iovec *iov,unsigned long niov
+		,loff_t pos)
 {
-	return sculld_defer_op(0, iocb, buf, count, pos);
+	//return sculld_defer_op(0, iocb, buf, count, pos);
+	return sculld_defer_op(0, iocb, iov, niov, pos);
 }
 
-static ssize_t sculld_aio_write(struct kiocb *iocb, const char __user *buf,
-		size_t count, loff_t pos)
+//static ssize_t sculld_aio_write(struct kiocb *iocb, const char __user *buf,
+//		size_t count, loff_t pos)
+//{
+//	return sculld_defer_op(1, iocb, (char __user *) buf, count, pos);
+//}
+static ssize_t sculld_aio_write(struct kiocb *iocb, const struct iovec *iov,unsigned long niov
+		,loff_t pos)
 {
-	return sculld_defer_op(1, iocb, (char __user *) buf, count, pos);
+	return sculld_defer_op(1, iocb, iov, niov, pos);
 }
 
 
- 
+
 /*
  * Mmap *is* available, but confined in a different file
  */
@@ -522,7 +533,7 @@ int sculld_trim(struct sculld_dev *dev)
 static void sculld_setup_cdev(struct sculld_dev *dev, int index)
 {
 	int err, devno = MKDEV(sculld_major, index);
-    
+
 	cdev_init(&dev->cdev, &sculld_fops);
 	dev->cdev.owner = THIS_MODULE;
 	dev->cdev.ops = &sculld_fops;
@@ -532,7 +543,7 @@ static void sculld_setup_cdev(struct sculld_dev *dev, int index)
 		printk(KERN_NOTICE "Error %d adding scull%d", err, index);
 }
 
-static ssize_t sculld_show_dev(struct device *ddev, char *buf)
+static ssize_t sculld_show_dev(struct device *ddev, struct device_attribute *attr , char *buf)
 {
 	struct sculld_dev *dev = ddev->driver_data;
 
@@ -560,7 +571,7 @@ int sculld_init(void)
 {
 	int result, i;
 	dev_t dev = MKDEV(sculld_major, 0);
-	
+
 	/*
 	 * Register your major, and accept a dynamic number.
 	 */
@@ -577,8 +588,8 @@ int sculld_init(void)
 	 * Register with the driver core.
 	 */
 	register_ldd_driver(&sculld_driver);
-	
-	/* 
+
+	/*
 	 * allocate the devices -- we can't have them static, as the number
 	 * can be specified at load time
 	 */
